@@ -1,9 +1,9 @@
-function whatsappLink(tierName) {
+function whatsappLink(number, tierName) {
   const text = encodeURIComponent(`Hi! I'd like to book the ${tierName} trip plan.`);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  return `https://wa.me/${number}?text=${text}`;
 }
 
-function renderCard(tier) {
+function renderCard(tier, whatsappNumber) {
   const priceRows = tier.prices.map(p => `
     <div class="price-row">
       <div>
@@ -45,17 +45,51 @@ function renderCard(tier) {
         ${tier.addons}
       </div>
 
-      <a class="book-btn" href="${whatsappLink(tier.name)}" target="_blank" rel="noopener">Book My Trip</a>
+      <a class="book-btn" href="${whatsappLink(whatsappNumber, tier.name)}" target="_blank" rel="noopener">Book My Trip</a>
     </div>
   `;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("pricing-cards");
-  container.innerHTML = TIERS.map(renderCard).join("");
+function renderGalleryItem(photo) {
+  return `
+    <figure class="gallery-item">
+      <img src="${photo.src}" alt="${photo.caption}" loading="lazy">
+      <figcaption>${photo.caption}</figcaption>
+    </figure>
+  `;
+}
 
-  const footerLink = document.getElementById("footer-whatsapp");
-  if (footerLink) {
-    footerLink.href = whatsappLink("general question");
+async function loadJSON(path) {
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
+  return res.json();
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const [settings, tiersData, galleryData] = await Promise.all([
+      loadJSON("data/settings.json"),
+      loadJSON("data/tiers.json"),
+      loadJSON("data/gallery.json")
+    ]);
+
+    const whatsappNumber = settings.whatsappNumber;
+
+    const pricingContainer = document.getElementById("pricing-cards");
+    pricingContainer.innerHTML = tiersData.tiers
+      .map(tier => renderCard(tier, whatsappNumber))
+      .join("");
+
+    const galleryContainer = document.getElementById("gallery-grid");
+    if (galleryContainer) {
+      galleryContainer.innerHTML = galleryData.photos.map(renderGalleryItem).join("");
+    }
+
+    const footerLink = document.getElementById("footer-whatsapp");
+    if (footerLink) {
+      footerLink.href = whatsappLink(whatsappNumber, "general question");
+    }
+  } catch (err) {
+    console.error("Error loading site content:", err);
   }
 });
