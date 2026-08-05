@@ -1,8 +1,0 @@
-{
-  "photos": [
-    { "src": "assets/gallery/placeholder-1.png", "caption": "Add a trip photo" },
-    { "src": "assets/gallery/placeholder-2.png", "caption": "Add a trip photo" },
-    { "src": "assets/gallery/placeholder-3.png", "caption": "Add a trip photo" },
-    { "src": "assets/gallery/placeholder-4.png", "caption": "Add a trip photo" }
-  ]
-}
