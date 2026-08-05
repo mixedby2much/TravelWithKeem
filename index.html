@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travelwithkeem — Choose Your Flow</title>
+<meta name="description" content="Group trips, zero drama — one planned day at a time. Custom itineraries delivered by WhatsApp with PDF + live map.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#"><img src="assets/logo.png" alt="Travel With Keem"></a>
+      <nav class="header-nav">
+        <a href="#gallery">Past Trips</a>
+        <a class="nav-cta" href="#pricing">See Plans</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Choose Your <em>Flow</em></h1>
+      <p class="hero-sub">Group trips, zero drama — one planned day at a time.</p>
+      <ul class="hero-badges">
+        <li><span class="dot"></span>WhatsApp delivery</li>
+        <li>PDF + live map</li>
+        <li>48h turnaround</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <h2>Past Trips</h2>
+      <p class="section-sub">A few moments from trips we've planned.</p>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Photos are rendered here by app.js from gallery-data.js -->
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="wrap">
+      <div class="cards" id="pricing-cards">
+        <!-- Cards are rendered here by app.js from tiers-data.js -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Travelwithkeem &middot; Custom trip planning</p>
+      <p class="footer-contact">Questions? <a id="footer-whatsapp" href="#">Message us on WhatsApp</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
