@@ -5,11 +5,23 @@
       "icon": "🧭",
       "tagline": "Light & effortless",
       "popular": false,
-      "bestFor": "Solo, couples & chill groups who want a clear plan without the over-scheduling.",
+      "bestFor": "Solo, couples & chill groups who want a clear plan without the \"over-scheduling\"",
       "prices": [
-        { "label": "3 Days", "desc": "Perfect weekend escape", "amount": "$199" },
-        { "label": "5 Days", "desc": "Most booked", "amount": "$299" },
-        { "label": "Group Lite", "desc": "5 days · up to 6 people", "amount": "$399" }
+        {
+          "label": "3 Days",
+          "desc": "Perfect weekend escape",
+          "amount": "$199"
+        },
+        {
+          "label": "5 Days",
+          "desc": "Most booked",
+          "amount": "$299"
+        },
+        {
+          "label": "Group Lite",
+          "desc": "5 days · up to 6 people",
+          "amount": "$399"
+        }
       ],
       "includes": [
         "Day flow blocks",
@@ -27,9 +39,21 @@
       "popular": true,
       "bestFor": "Groups of 3–8 who want smooth days, timed buffers & no “what are we doing now?” moments.",
       "prices": [
-        { "label": "5 Days", "desc": "Bestseller for friends trips", "amount": "$399" },
-        { "label": "8 Days", "desc": "Deep dive, no rush", "amount": "$699" },
-        { "label": "Group Navigator", "desc": "10 days · full coordination", "amount": "$899" }
+        {
+          "label": "5 Days",
+          "desc": "Bestseller for friends trips",
+          "amount": "$399"
+        },
+        {
+          "label": "8 Days",
+          "desc": "Deep dive, no rush",
+          "amount": "$699"
+        },
+        {
+          "label": "Group Navigator",
+          "desc": "10 days · full coordination",
+          "amount": "$899"
+        }
       ],
       "includes": [
         "Everything in Budget Flow",
@@ -48,8 +72,16 @@
       "popular": false,
       "bestFor": "Large groups, multi-city & high-stakes trips where you want me in your pocket.",
       "prices": [
-        { "label": "10+ Days", "desc": "Starting at, fully custom", "amount": "$950+" },
-        { "label": "14 Days", "desc": "Big trip, zero logistics", "amount": "$1,295" }
+        {
+          "label": "10+ Days",
+          "desc": "Starting at, fully custom",
+          "amount": "$950+"
+        },
+        {
+          "label": "14 Days",
+          "desc": "Big trip, zero logistics",
+          "amount": "$1,295"
+        }
       ],
       "includes": [
         "Everything in Signature",
